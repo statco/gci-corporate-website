@@ -958,7 +958,7 @@ footer{background:var(--ink);padding:60px 5% 28px;border-top:1px solid rgba(255,
         <li><div class="cti">📞</div> <a href="tel:+14384026616">(438) 402-6616</a></li>
         <li><div class="cti">✉️</div> <a href="mailto:info@groupecomint.ca">info@groupecomint.ca</a></li>
         <li><div class="cti">🕒</div> <span data-li="en">Monday–Friday · 9am–5pm EST</span><span data-li="fr">Lundi–vendredi · 9h–17h HE</span></li>
-        <li><div class="cti">🌐</div> <a href="https://www.gci-finance.ca" target="_blank">gci-finance.ca</a></li>
+        <li><div class="cti">🌐</div> <a href="https://www.groupecomint.ca" target="_blank">groupecomint.ca</a></li>
       </ul>
     </div>
     <div class="contact-form-card fade-up">
@@ -971,31 +971,31 @@ footer{background:var(--ink);padding:60px 5% 28px;border-top:1px solid rgba(255,
           <div class="ff-row">
             <div class="ff">
               <label><span data-li="en">Name</span><span data-li="fr">Nom</span></label>
-              <input type="text" required placeholder="Patrick Pierre">
+              <input type="text" name="name" required placeholder="Patrick Pierre">
             </div>
             <div class="ff">
               <label><span data-li="en">Company</span><span data-li="fr">Entreprise</span></label>
-              <input type="text" placeholder="Acme Mining Inc.">
+              <input type="text" name="company" placeholder="Acme Mining Inc.">
             </div>
           </div>
           <div class="ff">
             <label>Email</label>
-            <input type="email" required placeholder="you@company.com">
+            <input type="email" name="email" required placeholder="you@company.com">
           </div>
           <div class="ff">
             <label><span data-li="en">Inquiry type</span><span data-li="fr">Type de demande</span></label>
-            <select required>
+            <select name="inquiry_type" required>
               <option value=""></option>
-              <option><span data-li="en">Equipment financing</span><span data-li="fr">Financement d'équipement</span></option>
-              <option><span data-li="en">Trade / commodity sourcing</span><span data-li="fr">Commerce / approvisionnement</span></option>
-              <option><span data-li="en">Partnership / distribution</span><span data-li="fr">Partenariat / distribution</span></option>
-              <option><span data-li="en">Africa market development</span><span data-li="fr">Développement marché africain</span></option>
-              <option><span data-li="en">General inquiry</span><span data-li="fr">Demande générale</span></option>
+              <option data-en="Equipment financing" data-fr="Financement d'équipement">Equipment financing</option>
+              <option data-en="Trade / commodity sourcing" data-fr="Commerce / approvisionnement">Trade / commodity sourcing</option>
+              <option data-en="Partnership / distribution" data-fr="Partenariat / distribution">Partnership / distribution</option>
+              <option data-en="Africa market development" data-fr="Développement marché africain">Africa market development</option>
+              <option data-en="General inquiry" data-fr="Demande générale">General inquiry</option>
             </select>
           </div>
           <div class="ff">
             <label><span data-li="en">Message</span><span data-li="fr">Message</span></label>
-            <textarea rows="3" style="resize:vertical" required placeholder="..."></textarea>
+            <textarea name="message" rows="3" style="resize:vertical" required placeholder="..."></textarea>
           </div>
           <button type="submit" class="cf-submit">
             <span data-li="en">Send message →</span>
@@ -1068,6 +1068,9 @@ function setLang(l){
   document.title=l==='en'
     ?'GCI Inc. | Groupe de Commerce Intercontinental — International Trade · Finance · Tires · E-Commerce'
     :'GCI Inc. | Groupe de Commerce Intercontinental — Commerce International · Finance · Pneus · E-Commerce';
+  document.querySelectorAll('option[data-en]').forEach(function(opt){
+    opt.textContent = l==='en' ? opt.getAttribute('data-en') : opt.getAttribute('data-fr');
+  });
 }
 function toggleLang(){setLang(lang==='en'?'fr':'en')}
 function toggleMenu(){document.getElementById('mobile-menu').classList.toggle('open')}
@@ -1111,6 +1114,10 @@ document.querySelectorAll('.cat-card').forEach(function(c,i){
   c.style.transitionDelay=(i*60)+'ms';
   c.classList.add('fade-up');
   obs.observe(c);
+});
+/* Init inquiry dropdown in English (default lang is EN on corporate) */
+document.querySelectorAll('option[data-en]').forEach(function(opt){
+  opt.textContent = opt.getAttribute('data-en');
 });
 </script>
 <script>
