@@ -67,6 +67,7 @@ nav{
   display:flex;align-items:center;gap:14px;
 }
 /* nav-logo-mark replaced by image logo */
+img.gci-logo-white[src=""], img.gci-logo-orig[src=""] { display: none !important; }
 .nav-links{display:flex;align-items:center;gap:24px;list-style:none}
 .nav-links a{font-size:13px;color:rgba(255,255,255,0.65);transition:color .2s}
 .nav-links a:hover{color:var(--white)}
@@ -521,7 +522,8 @@ footer{background:var(--ink);padding:60px 5% 28px;border-top:1px solid rgba(255,
 <nav>
   <div class="nav-i">
     <div class="nav-brand">
-      <img class="gci-logo-white" src="" alt="GCI Inc." alt="GCI Inc. — Groupe de Commerce Intercontinental" style="height:42px;width:auto;display:block">
+      <img class="gci-logo-white" src="" alt="GCI Inc." style="height:42px;width:auto;display:none" onload="this.style.display='block';this.nextElementSibling.style.display='none'">
+      <span style="font-family:'Cormorant Garamond',Georgia,serif;font-size:20px;font-weight:700;color:#fff;letter-spacing:.01em">GCI <span style="color:var(--gold)">Inc.</span></span>
     </div>
     <ul class="nav-links">
       <li><a href="#divisions"><span data-li="en">Our Divisions</span><span data-li="fr">Nos Divisions</span></a></li>
@@ -611,10 +613,10 @@ footer{background:var(--ink);padding:60px 5% 28px;border-top:1px solid rgba(255,
         </div>
       </div>
       <div class="hero-stat">
-        <div class="hero-stat-num">5</div>
+        <div class="hero-stat-num">7</div>
         <div class="hero-stat-label">
           <strong><span data-li="en">Trade categories</span><span data-li="fr">Catégories commerciales</span></strong>
-          <span data-li="en">Agro · Equipment · Tires · Electronics</span><span data-li="fr">Agro · Équipements · Pneus · Électronique</span>
+          <span data-li="en">Agro · Equipment · Tires · Minerals · Oil & Gas</span><span data-li="fr">Agro · Équipements · Pneus · Minéraux · Pétrole</span>
         </div>
       </div>
     </div>
@@ -792,7 +794,7 @@ footer{background:var(--ink);padding:60px 5% 28px;border-top:1px solid rgba(255,
   <div class="container">
     <div class="founder-wrap">
       <div class="founder-card fade-up">
-        <img class="gci-logo-orig" src="" alt="GCI Inc." alt="GCI Inc." style="height:60px;width:auto;margin-bottom:20px;display:block">
+        <img class="gci-logo-orig" src="" alt="GCI Inc." onload="this.style.display='block'" style="height:60px;width:auto;margin-bottom:20px;display:block">
         <div class="founder-name">Patrick B. Pierre</div>
         <div class="founder-role">
           <span data-li="en">President & Founder — Groupe de Commerce Intercontinental Inc.</span>
@@ -866,7 +868,7 @@ footer{background:var(--ink);padding:60px 5% 28px;border-top:1px solid rgba(255,
         <span data-li="fr">Approvisionnés auprès de producteurs de confiance dans le monde entier. Contactez-nous pour des demandes de sourcing personnalisées.</span>
       </p>
     </div>
-    <div class="catalog-grid fade-up">
+    <div class="catalog-grid fade-up" style="grid-template-columns:repeat(3,1fr)">
       <div class="cat-card" style="border-color:rgba(13,92,99,0.3)">
         <div class="cat-icon">🛞</div>
         <div class="cat-name" style="color:var(--teal)"><span data-li="en">Automotive & Industrial Tires</span><span data-li="fr">Pneus auto et industriels</span></div>
@@ -881,6 +883,16 @@ footer{background:var(--ink);padding:60px 5% 28px;border-top:1px solid rgba(255,
         <div class="cat-icon">⚙️</div>
         <div class="cat-name"><span data-li="en">Industrial Equipment</span><span data-li="fr">Équipements industriels</span></div>
         <div class="cat-desc"><span data-li="en">Machinery, spare parts, pumps, valves</span><span data-li="fr">Machines, pièces, pompes, vannes</span></div>
+      </div>
+      <div class="cat-card" style="border-color:rgba(186,117,23,0.3)">
+        <div class="cat-icon">💎</div>
+        <div class="cat-name" style="color:var(--gold)"><span data-li="en">Precious & Strategic Minerals</span><span data-li="fr">Minéraux précieux et stratégiques</span></div>
+        <div class="cat-desc"><span data-li="en">Gold, lithium, cobalt, copper, rare earths</span><span data-li="fr">Or, lithium, cobalt, cuivre, terres rares</span></div>
+      </div>
+      <div class="cat-card" style="border-color:rgba(186,117,23,0.3)">
+        <div class="cat-icon">🛢️</div>
+        <div class="cat-name" style="color:var(--gold)"><span data-li="en">Oil & Gas Products</span><span data-li="fr">Produits pétroliers et gaziers</span></div>
+        <div class="cat-desc"><span data-li="en">Crude oil, refined products, LPG, lubricants</span><span data-li="fr">Pétrole brut, produits raffinés, GPL, lubrifiants</span></div>
       </div>
       <div class="cat-card">
         <div class="cat-icon">⚡</div>
@@ -932,7 +944,7 @@ footer{background:var(--ink);padding:60px 5% 28px;border-top:1px solid rgba(255,
 <div class="cta-band" id="contact">
   <div class="cta-inner container">
     <div class="cta-left fade-up">
-      <img class="gci-logo-white" src="" alt="GCI Inc." alt="GCI Inc." style="height:52px;width:auto;display:block;margin-bottom:24px">
+      <img class="gci-logo-white" src="" alt="GCI Inc." onload="this.style.display='block'" style="height:52px;width:auto;display:block;margin-bottom:24px">
       <h2>
         <span data-li="en">Let's build something across borders</span>
         <span data-li="fr">Construisons quelque chose au-delà des frontières</span>
@@ -944,7 +956,7 @@ footer{background:var(--ink);padding:60px 5% 28px;border-top:1px solid rgba(255,
       <ul class="cta-contact">
         <li><div class="cti">📍</div> 1014 chemin des Conifères, Rouyn-Noranda QC J0Z 3J0</li>
         <li><div class="cti">📞</div> <a href="tel:+14384026616">(438) 402-6616</a></li>
-        <li><div class="cti">✉️</div> <a href="mailto:info@gci-finance.ca">info@gci-finance.ca</a></li>
+        <li><div class="cti">✉️</div> <a href="mailto:info@groupecomint.ca">info@groupecomint.ca</a></li>
         <li><div class="cti">🕒</div> <span data-li="en">Monday–Friday · 9am–5pm EST</span><span data-li="fr">Lundi–vendredi · 9h–17h HE</span></li>
         <li><div class="cti">🌐</div> <a href="https://www.gci-finance.ca" target="_blank">gci-finance.ca</a></li>
       </ul>
@@ -1007,7 +1019,7 @@ footer{background:var(--ink);padding:60px 5% 28px;border-top:1px solid rgba(255,
 <footer>
   <div class="footer-top">
     <div>
-      <img class="gci-logo-white" src="" alt="GCI Inc." alt="GCI Inc." style="height:48px;width:auto;display:block;margin-bottom:12px">
+      <img class="gci-logo-white" src="" alt="GCI Inc." onload="this.style.display='block'" style="height:48px;width:auto;display:block;margin-bottom:12px">
       <p class="footer-desc">
         <span data-li="en">Groupe de Commerce Intercontinental Inc. — Bridging Canada and Africa through trade, finance, tires, and commerce. Incorporated in Quebec, Canada.</span>
         <span data-li="fr">Groupe de Commerce Intercontinental Inc. — Relier le Canada et l'Afrique par le commerce, la finance, les pneus et l'échange. Constituée au Québec, Canada.</span>
@@ -1061,12 +1073,27 @@ function toggleLang(){setLang(lang==='en'?'fr':'en')}
 function toggleMenu(){document.getElementById('mobile-menu').classList.toggle('open')}
 function submitForm(e){
   e.preventDefault();
-  document.getElementById('contact-form').style.display='none';
-  document.getElementById('cf-success').style.display='block';
-  var t=document.getElementById('toast');
-  t.textContent=lang==='en'?'✓ Message received — we\'ll be in touch shortly':'✓ Message reçu — nous vous contacterons sous peu';
-  t.classList.add('show');
-  setTimeout(function(){t.classList.remove('show')},4500);
+  var form=document.getElementById('contact-form');
+  var btn=form.querySelector('button[type="submit"]');
+  if(btn){btn.disabled=true;btn.textContent=lang==='fr'?'Envoi en cours...':'Sending...';}
+  fetch('https://formspree.io/f/mdawbbro',{
+    method:'POST',body:new FormData(form),headers:{'Accept':'application/json'}
+  }).then(function(res){
+    if(res.ok){
+      form.style.display='none';
+      document.getElementById('cf-success').style.display='block';
+      var t=document.getElementById('toast');
+      t.textContent=lang==='en'?'✓ Message received — we\'ll be in touch shortly':'✓ Message reçu — nous vous contacterons sous peu';
+      t.classList.add('show');
+      setTimeout(function(){t.classList.remove('show')},4500);
+    } else {
+      if(btn){btn.disabled=false;btn.textContent=lang==='fr'?'Réessayer':'Try again';}
+      alert(lang==='fr'?'Erreur — veuillez réessayer ou nous écrire à info@groupecomint.ca':'Error — please try again or email info@groupecomint.ca');
+    }
+  }).catch(function(){
+    if(btn){btn.disabled=false;btn.textContent=lang==='fr'?'Réessayer':'Try again';}
+    alert(lang==='fr'?'Erreur de connexion — veuillez réessayer.':'Connection error — please try again.');
+  });
 }
 var obs=new IntersectionObserver(function(entries){
   entries.forEach(function(entry){
